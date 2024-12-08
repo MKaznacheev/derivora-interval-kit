@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>xyz.derivora</groupId>
+        <artifactId>derivora-core</artifactId>
+        <version>0.1.0</version>
+    </parent>
+
+    <artifactId>derivora-interval-kit</artifactId>
+    <version>0.0.0</version>
+    <packaging>jar</packaging>
+    <name>Derivora Interval Kit</name>
+    <description>Derivora Interval Kit is a module providing tools for working with numerical intervals in Java</description>
+    <url>https://github.com/MKaznacheev/derivora-interval-kit.git</url>
+
+    <licenses>
+        <license>
+            <name>GNU Lesser General Public License v3.0</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.html</url>
+            <distribution>repo</distribution>
+            <comments>
+                This project is licensed under the GNU Lesser General Public License v3.0.
+                See the LICENSE file for more details.
+            </comments>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>MKaznacheev</id>
+            <name>Matvei Kaznacheev</name>
+            <email>kaznacheev.ma@gmail.com</email>
+        </developer>
+    </developers>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <configuration>
+                    <aggregate>false</aggregate>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>
