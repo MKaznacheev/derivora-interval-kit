@@ -33,4 +33,5 @@ module derivora.interval.kit {
     requires derivora.util.kit;
 
     exports xyz.derivora.intervalkit.bounds;
+    exports xyz.derivora.intervalkit.bounds.comparison;
 }

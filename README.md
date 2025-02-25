@@ -15,6 +15,7 @@ The project has started active development.
 ## Project Structure
 
 * Package `xyz.derivora.intervalkit.bounds` provides abstractions for representing and handling interval boundaries.
+  * Subpackage `xyz.derivora.intervalkit.bounds.comparison` provides utilities for comparing interval boundaries.
 
 ## License
 
