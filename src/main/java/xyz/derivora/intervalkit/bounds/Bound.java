@@ -17,6 +17,9 @@
 
 package xyz.derivora.intervalkit.bounds;
 
+import xyz.derivora.intervalkit.bounds.comparison.BoundComparator;
+import xyz.derivora.intervalkit.bounds.comparison.IncomparableBoundsException;
+
 /**
  * Represents a boundary of an interval, which can be either finite or infinite.
  * <p>
@@ -31,6 +34,8 @@ package xyz.derivora.intervalkit.bounds;
  * <ul>
  *   <li>{@link #isFinite()} determines whether the boundary is finite.</li>
  *   <li>{@link #isInfinite()} is the logical negation of {@code isFinite()}, ensuring consistency.</li>
+ *   <li>{@link #compareTo(Bound)} provides a well-defined ordering of boundaries, as specified by
+ *       {@link BoundComparator}, and throws {@link IncomparableBoundsException} if comparison is not possible.</li>
  * </ul>
  * </p>
  *
@@ -41,6 +46,7 @@ package xyz.derivora.intervalkit.bounds;
  *
  * @see FiniteBound
  * @see InfiniteBound
+ * @see BoundComparator
  */
 public sealed interface Bound extends Comparable<Bound> permits FiniteBound, InfiniteBound {
 
@@ -67,5 +73,24 @@ public sealed interface Bound extends Comparable<Bound> permits FiniteBound, Inf
      */
     default boolean isInfinite() {
         return !isFinite();
+    }
+
+    /**
+     * Compares this boundary with the specified boundary for order.
+     * <p>
+     * This method delegates the comparison to {@link BoundComparator}.
+     * The comparison follows the ordering defined by {@link BoundComparator}, ensuring
+     * a consistent and well-defined sorting of finite and infinite boundaries.
+     * </p>
+     *
+     * @param other the boundary to compare with this boundary
+     * @return a negative integer, zero, or a positive integer as this boundary
+     *         is less than, equal to, or greater than the specified boundary
+     * @throws NullPointerException if {@code other} is {@code null}
+     * @throws IncomparableBoundsException if the boundaries cannot be compared
+     */
+    @Override
+    default int compareTo(Bound other) {
+        return BoundComparator.getInstance().compare(this, other);
     }
 }
