@@ -19,7 +19,7 @@ package testdata.numbers;
 
 import java.math.BigDecimal;
 
-public class ComparableNumber extends Number implements Comparable<ComparableNumber> {
+public class ComparableNumber extends SimpleNumber implements Comparable<ComparableNumber> {
 
     public static final ComparableNumber ZERO = new ComparableNumber("0");
     public static final ComparableNumber ONE = new ComparableNumber("1");
@@ -32,10 +32,8 @@ public class ComparableNumber extends Number implements Comparable<ComparableNum
         }
     };
 
-    protected final String number;
-
     public ComparableNumber(String number) {
-        this.number = number;
+        super(number);
     }
 
     public static ComparableNumber getIncomparableInstance(String number) {
@@ -52,30 +50,5 @@ public class ComparableNumber extends Number implements Comparable<ComparableNum
         BigDecimal thisBigDecimal = new BigDecimal(number);
         BigDecimal otherBigDecimal = new BigDecimal(other.number);
         return thisBigDecimal.compareTo(otherBigDecimal);
-    }
-
-    @Override
-    public int intValue() {
-        return Integer.parseInt(number);
-    }
-
-    @Override
-    public long longValue() {
-        return Long.parseLong(number);
-    }
-
-    @Override
-    public float floatValue() {
-        return Float.parseFloat(number);
-    }
-
-    @Override
-    public double doubleValue() {
-        return Double.parseDouble(number);
-    }
-
-    @Override
-    public String toString() {
-        return number;
     }
 }
