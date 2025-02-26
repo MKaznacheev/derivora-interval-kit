@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>derivora-interval-kit</artifactId>
-    <version>0.0.0</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
     <name>Derivora Interval Kit</name>
     <description>Derivora Interval Kit is a module providing tools for working with numerical intervals in Java</description>

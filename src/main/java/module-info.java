@@ -36,4 +36,5 @@ module derivora.interval.kit {
     exports xyz.derivora.intervalkit.bounds.finite;
     exports xyz.derivora.intervalkit.bounds.infinite;
     exports xyz.derivora.intervalkit.bounds.comparison;
+    exports xyz.derivora.intervalkit.bounds.factory;
 }

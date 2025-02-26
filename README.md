@@ -18,6 +18,7 @@ The project has started active development.
   * Subpackage `xyz.derivora.intervalkit.bounds.finite` provides implementations for finite interval boundaries.
   * Subpackage `xyz.derivora.intervalkit.bounds.infinite` provides implementations for infinite interval boundaries.
   * Subpackage `xyz.derivora.intervalkit.bounds.comparison` provides utilities for comparing interval boundaries.
+  * Subpackage `xyz.derivora.intervalkit.bounds.factory` provides a factory interface for creating boundary instances.
 
 ## License
 
